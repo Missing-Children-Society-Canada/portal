@@ -1,0 +1,37 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_MCSC_Portal_name": {
+            "defaultValue": "mcsc-portal",
+            "type": "string"
+        },
+        "APP_INSIGHTS_KEY": {
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/Sites",
+            "apiVersion": "2015-08-01",
+            "name": "[parameters('sites_MCSC_Authorization_name')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "name": "[parameters('sites_MCSC_Authorization_name')]",
+                "siteConfig": {
+                    "phpVersion": "off",
+                    "appSettings": [
+                        {
+                            "Name": "APP_INSIGHTS_KEY",
+                            "Value": "[parameters('APP_INSIGHTS_KEY')]"
+                        },
+                        {
+                            "Name": "WEBSITE_NODE_DEFAULT_VERSION",
+                            "Value": "4.4.7"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

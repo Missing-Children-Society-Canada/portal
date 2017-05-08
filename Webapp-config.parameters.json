@@ -1,0 +1,12 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_MCSC_Portal_name": {
+            "value": "mcsc-portal-dev"
+        },
+        "APP_INSIGHTS_KEY": {
+            "value": ""
+        }
+    }
+}
