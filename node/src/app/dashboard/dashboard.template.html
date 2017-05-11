@@ -32,22 +32,10 @@
                 <td><strong>Social</strong></td>
               </thead>
               <tbody>
-                <tr>
-                  <td>Anthony Bartolo</td>
-                  <td>May 11, 2017</td>
-                  <td>4:20 PM</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Jef King</td>
-                  <td>May 11, 2017</td>
-                  <td>10:52 AM</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Jeremy Foster</td>
-                  <td>May 10, 2017</td>
-                  <td>7:26 PM</td>
+                <tr *ngFor="let person of dataService.getPersons()">
+                  <td>{{person.name}}</td>
+                  <td>{{person.date}}</td>
+                  <td>{{person.time}}</td>
                   <td></td>
                 </tr>
               </tbody>
