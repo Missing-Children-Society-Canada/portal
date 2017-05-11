@@ -1,7 +1,7 @@
 {
-  "name": "Sing",
+  "name": "MCSC",
   "version": "3.6.0",
-  "description": "Sing Dashboard App with Angular 4.0 Final Release support by Flatlogic",
+  "description": "MCSC Portal",
   "scripts": {
     "install": "napa",
     "build:dev": "webpack --config config/webpack.dev.js --progress --profile",

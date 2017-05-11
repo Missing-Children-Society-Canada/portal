@@ -22,7 +22,7 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Sing App 3.6.0 with Angular 4.0 Final Release support by Flatlogic',
+  title: 'Missing Children Society Canada',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
