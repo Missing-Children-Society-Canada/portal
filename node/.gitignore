@@ -49,3 +49,5 @@ jspm_packages
 
 src/app/**/*.js
 src/app/**/*.js.map
+
+.vscode
