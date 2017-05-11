@@ -6,7 +6,7 @@ declare let jQuery: any;
 export class AppConfig {
   config = {
     name: 'mcsc',
-    title: 'MCSC Portal',
+    title: 'MCSC Childfinder Portal',
     version: '3.2.0',
     /**
      * Whether to print and alert some log information
