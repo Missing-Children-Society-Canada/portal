@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, ElementRef, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppConfig } from '../../app.config';
+import { AuthService } from "../../services/auth/auth.service";
+
 declare let jQuery: any;
 
 @Component({
@@ -14,7 +16,7 @@ export class Navbar implements OnInit {
   config: any;
   router: Router;
 
-  constructor(el: ElementRef, config: AppConfig, router: Router) {
+  constructor(el: ElementRef, config: AppConfig, router: Router, private authService:AuthService) {
     this.$el = jQuery(el.nativeElement);
     this.config = config.getConfig();
     this.router = router;

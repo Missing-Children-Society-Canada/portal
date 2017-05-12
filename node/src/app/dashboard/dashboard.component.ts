@@ -16,7 +16,8 @@ export class Dashboard {
 
   constructor(config: AppConfig, private dataService: DataService, private authService: AuthService) {
     this.config = config.getConfig();
-    authService.login().then(user => console.log(user.name));
+    // authService.login().then(user => console.log(user.name));
+    
   }
 
   ngOnInit(): void {
