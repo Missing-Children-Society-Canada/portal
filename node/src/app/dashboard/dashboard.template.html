@@ -59,7 +59,7 @@
       </div>
     </section>
   </div>
-  <div class="col-lg-4 col-12">
+  <div class="col-lg-4 col-12" [hidden]="!config.settings.showExtraUI">
     <section widget class="widget bg-transparent">
       <header>
         <h5>
@@ -127,17 +127,17 @@
         <div class="input-group mt">
           <input type="text" class="form-control" placeholder="Search Map">
           <span class="input-group-btn">
-                                <button type="submit" class="btn btn-default">
-                                  <i class="fa fa-search text-gray"></i>
-                                </button>
-                            </span>
+              <button type="submit" class="btn btn-default">
+                <i class="fa fa-search text-gray"></i>
+              </button>
+          </span>
         </div>
       </div>
     </section>
   </div>
 </div>
 <div class="row">
-  <div class="col-lg-4 col-12">
+  <div class="col-lg-4 col-12" [hidden]="!config.settings.showExtraUI">
     <section widget class="widget">
       <!-- .widget>header is generally a place for widget title and widget controls. see .widget in _base.scss -->
       <header>
@@ -173,7 +173,7 @@
       </div>
     </section>
   </div>
-  <div class="col-lg-4 col-12">
+  <div class="col-lg-4 col-12" [hidden]="!config.settings.showExtraUI">
     <section widget class="widget">
       <header>
         <h6>
@@ -209,7 +209,7 @@
       </div>
     </section>
   </div>
-  <div class="col-lg-4 col-12">
+  <div class="col-lg-4 col-12" [hidden]="!config.settings.showExtraUI">
     <section widget class="widget">
       <header>
         <h6>
@@ -247,7 +247,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-lg-4 col-12">
+  <div class="col-lg-4 col-12" [hidden]="!config.settings.showExtraUI">
     <section widget class="widget">
       <header>
         <h6><span class="badge badge-danger">New</span> Messages</h6>
@@ -305,7 +305,7 @@
       </footer>
     </section>
   </div>
-  <div class="col-lg-4 col-12">
+  <div class="col-lg-4 col-12" [hidden]="!config.settings.showExtraUI">
     <section widget class="widget">
       <header>
         <h6>
@@ -363,7 +363,7 @@
       </div>
     </section>
   </div>
-  <div class="col-lg-4 col-12">
+  <div class="col-lg-4 col-12" [hidden]="!config.settings.showExtraUI">
     <section widget class="widget">
       <header>
         <h6>Calendar</h6>

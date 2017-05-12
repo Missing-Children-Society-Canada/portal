@@ -42,7 +42,7 @@
   <!-- this part is hidden for xs screens -->
   <div class="collapse navbar-collapse">
     <!-- search-results form! link it to your search-results server -->
-    <form class="navbar-form float-left" role="search" #f="ngForm" (ngSubmit)="onDashboardSearch(f)">
+    <form class="navbar-form float-left" role="search" #f="ngForm" (ngSubmit)="onDashboardSearch(f)" [hidden]="!config.settings.showExtraUI">
       <div class="form-group">
         <div class="input-group input-group-no-border">
           <span class="input-group-addon">
@@ -73,7 +73,7 @@
         <div notifications class="dropdown-menu dropdown-menu-right animated animated-fast fadeInUp"
           ></div>
       </li>
-      <li class="nav-item dropdown ml-lg">
+      <li class="nav-item dropdown ml-lg" [hidden]="!config.settings.showExtraUI">
         <a href class="nav-link dropdown-toggle" data-toggle="dropdown">
           <i class="fa fa-cog fa-lg"></i>
         </a>
@@ -86,7 +86,7 @@
           <li><a class="dropdown-item" [routerLink]=" ['/login'] "><i class="fa fa-sign-out"></i> &nbsp; Log Out</a></li>
         </ul>
       </li>
-      <li class="nav-item ml-lg">
+      <li class="nav-item ml-lg" [hidden]="!config.settings.showExtraUI">
         <a class="nav-link" href="#" (click)="toggleChat()" id="toggle-chat">
           <i class="fa fa-globe fa-lg"></i>
         </a>

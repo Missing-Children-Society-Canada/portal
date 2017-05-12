@@ -42,7 +42,8 @@ export class AppConfig {
         'lg-max': 1199,
         'xl-min': 1200
       },
-      navCollapseTimeout: 2500
+      navCollapseTimeout: 2500,
+      showExtraUI: false
     },
 
     /**

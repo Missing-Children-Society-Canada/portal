@@ -30,10 +30,10 @@
       </a>
       <ul id="sidebar-dashboard" class="collapse">
         <li><a [routerLink]=" ['dashboard'] ">Dashboard</a></li>
-        <li><a [routerLink]=" ['widgets'] ">Widgets</a></li>
+        <li [hidden]="!config.settings.showExtraUI"><a [routerLink]=" ['widgets'] ">Widgets</a></li>
       </ul>
     </li>
-    <li>
+    <li [hidden]="!config.settings.showExtraUI">
       <a [routerLink]=" ['inbox'] ">
           <span class="icon">
             <i class="fa fa-envelope"></i>
@@ -44,7 +44,7 @@
           </span>
       </a>
     </li>
-    <li>
+    <li [hidden]="!config.settings.showExtraUI">
       <a [routerLink]=" ['charts'] ">
           <span class="icon">
             <i class="glyphicon glyphicon-stats"></i>
@@ -65,9 +65,11 @@
     </li>
   </ul>
   <!-- every .sidebar-nav may have a title -->
-  <h5 class="sidebar-nav-title">Template <a class="action-link" href="#"><i class="glyphicon glyphicon-refresh"></i></a></h5>
+  <h5 class="sidebar-nav-title" [hidden]="!config.settings.showExtraUI">
+    Template <a class="action-link" href="#"><i class="glyphicon glyphicon-refresh"></i></a>
+  </h5>
   <ul class="sidebar-nav">
-    <li>
+    <li [hidden]="!config.settings.showExtraUI">
       <!-- an example of nested submenu. basic bootstrap collapse component -->
       <a class="collapsed" data-target="#sidebar-forms" data-toggle="collapse" data-parent="#sidebar">
           <span class="icon">
@@ -82,7 +84,7 @@
         <li><a [routerLink]=" ['forms/wizard'] ">Form Wizard</a></li>
       </ul>
     </li>
-    <li>
+    <li [hidden]="!config.settings.showExtraUI">
       <a class="collapsed" data-target="#sidebar-ui" data-toggle="collapse" data-parent="#sidebar">
           <span class="icon">
             <i class="glyphicon glyphicon-tree-conifer"></i>
@@ -99,7 +101,7 @@
         <li><a [routerLink]=" ['ui/list-groups'] ">List Groups</a></li>
       </ul>
     </li>
-    <li>
+    <li [hidden]="!config.settings.showExtraUI">
       <a [routerLink]=" ['grid'] ">
           <span class="icon">
             <i class="glyphicon glyphicon-th"></i>
@@ -107,7 +109,7 @@
         Grid
       </a>
     </li>
-    <li>
+    <li [hidden]="!config.settings.showExtraUI">
       <a class="collapsed" data-target="#sidebar-maps" data-toggle="collapse" data-parent="#sidebar">
           <span class="icon">
             <i class="glyphicon glyphicon-map-marker"></i>
@@ -120,7 +122,7 @@
         <li><a [routerLink]=" ['maps/vector'] ">Vector Maps</a></li>
       </ul>
     </li>
-    <li>
+    <li [hidden]="!config.settings.showExtraUI">
       <!-- an example of nested submenu. basic bootstrap collapse component -->
       <a class="collapsed" data-target="#sidebar-tables" data-toggle="collapse" data-parent="#sidebar">
           <span class="icon">
@@ -134,7 +136,7 @@
         <li><a [routerLink]=" ['tables/dynamic'] ">Tables Dynamic <sup class="bg-transparent text-danger fs-sm fw-bold">ng2</sup></a></li>
       </ul>
     </li>
-    <li>
+    <li [hidden]="!config.settings.showExtraUI">
       <a class="collapsed" data-target="#sidebar-extra" data-toggle="collapse" data-parent="#sidebar">
           <span class="icon">
             <i class="fa fa-leaf"></i>
@@ -152,7 +154,7 @@
         <li><a [routerLink]=" ['extra/timeline'] ">Time Line</a></li>
       </ul>
     </li>
-    <li>
+    <li [hidden]="!config.settings.showExtraUI">
       <a class="collapsed" data-target="#sidebar-levels" data-toggle="collapse" data-parent="#sidebar">
           <span class="icon">
             <i class="fa fa-folder-open"></i>
@@ -175,9 +177,12 @@
       </ul>
     </li>
   </ul>
-  <h5 class="sidebar-nav-title">Labels <a class="action-link" href="#"><i class="glyphicon glyphicon-plus"></i></a></h5>
+
+  <h5 class="sidebar-nav-title" [hidden]="!config.settings.showExtraUI">
+    Labels <a class="action-link" href="#"><i class="glyphicon glyphicon-plus"></i></a>
+  </h5>
   <!-- some styled links in sidebar. ready to use as links to email folders, projects, groups, etc -->
-  <ul class="sidebar-labels">
+  <ul class="sidebar-labels" [hidden]="!config.settings.showExtraUI">
     <li>
       <a href="#">
         <!-- yep, .circle again -->
@@ -198,9 +203,11 @@
       </a>
     </li>
   </ul>
-  <h5 class="sidebar-nav-title">Projects</h5>
+  <h5 class="sidebar-nav-title" [hidden]="!config.settings.showExtraUI">
+    Projects
+  </h5>
   <!-- A place for sidebar notifications & alerts -->
-  <div class="sidebar-alerts">
+  <div class="sidebar-alerts" [hidden]="!config.settings.showExtraUI">
     <div class="alert fade show">
       <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
       <span class="text-white fw-semi-bold">Sales Report</span> <br>
