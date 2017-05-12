@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, Pipe, PipeTransform } from '@angular/core
 import { AppConfig } from '../app.config';
 import { DataService } from "../services/data/data.service";
 import { AuthService } from "../services/auth/auth.service";
+import { PbiComponent } from "../components/pbi/pbi.component";
 
 @Component({
   selector: 'dashboard',
@@ -14,13 +15,14 @@ export class Dashboard {
   month: any;
   year: any;
 
-  constructor(config: AppConfig, private dataService: DataService, private authService: AuthService) {
+  constructor(config: AppConfig, private dataService: DataService, private authService: AuthService, private pbi:PbiComponent) {
     this.config = config.getConfig();
     // authService.login().then(user => console.log(user.name));
     
   }
 
   ngOnInit(): void {
+    this.pbi
     let now = new Date();
     this.month = now.getMonth() + 1;
     this.year = now.getFullYear();
