@@ -1,24 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+
+import { Person } from "../../models/Person";
 
 @Injectable()
 export class DataService {
-    getPersons() {
-        return [
-            {
-                name:"Anthony Bartolo",
-                date:"May 11, 2017",
-                time:"4:23 PM"
-            },
-            {
-                name:"Jef King",
-                date:"May 11, 2017",
-                time:"10:52 AM"
-            },
-            {
-                name:"Jeremy Foster",
-                date:"May 10, 2017",
-                time:"7:26 PM"
-            }
-        ]
+    persons: Person[];
+
+    constructor(private http: Http) {
+        this.http
+            // .get("https://mscs-cf-functions.azurewebsites.net/api/profiles")
+            .get("assets/mock-data/profiles.json")
+            .map(r => r.json())
+            .subscribe(p => this.persons = p, console.log);
     }
+
 }

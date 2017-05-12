@@ -32,11 +32,23 @@
                 <td><strong>Social</strong></td>
               </thead>
               <tbody>
-                <tr *ngFor="let person of dataService.getPersons()">
+                <tr *ngFor="let person of dataService.persons">
                   <td>{{person.name}}</td>
-                  <td>{{person.date}}</td>
-                  <td>{{person.time}}</td>
-                  <td></td>
+                  <td>{{person.datetime | date}}</td>
+                  <td>{{person.datetime | date:"jms"}}</td>
+                  <td>
+                    <div style="display:flex;justify-content:space-between;">
+                      <div style="width:24px;">
+                        <span [hidden]="!person.twitter">X</span>
+                      </div>
+                      <div style="width:24px;">
+                        <span [hidden]="!person.facebook">X</span>
+                      </div>
+                      <div style="width:24px;">
+                        <span [hidden]="!person.instagram">X</span>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
               </tbody>
             </table>

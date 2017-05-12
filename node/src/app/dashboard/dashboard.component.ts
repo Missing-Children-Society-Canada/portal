@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Pipe, PipeTransform } from '@angular/core';
 import { AppConfig } from '../app.config';
 import { DataService } from "../services/data/data.service";
 
@@ -15,7 +15,6 @@ export class Dashboard {
 
   constructor(config: AppConfig, private dataService: DataService) {
     this.config = config.getConfig();
-
   }
 
   ngOnInit(): void {
