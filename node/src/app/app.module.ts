@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
+import { AuthService } from '../app/services/auth/auth.service';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -21,7 +22,8 @@ import { ErrorComponent } from './error/error.component';
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
   AppState,
-  AppConfig
+  AppConfig,
+  AuthService
 ];
 
 type StoreType = {
