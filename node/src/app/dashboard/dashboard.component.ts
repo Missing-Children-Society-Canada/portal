@@ -10,6 +10,10 @@ import { AuthService } from "../services/auth/auth.service";
   encapsulation: ViewEncapsulation.None
 })
 export class Dashboard {
+  public user: any = null;
+    public userInfo: any = null;
+    public apiCallFailed: boolean;
+    public loginFailed: boolean;
   config: any;
   month: any;
   year: any;
@@ -19,6 +23,23 @@ export class Dashboard {
     // authService.login().then(user => console.log(user.name));
     
   }
+  public login() {
+        this.loginFailed = false;
+        this.authService.login()
+            .then(user => {
+                if (user) {
+                    this.user = user;
+                } else {
+                    this.loginFailed = true;
+                }
+            }, () => {
+                this.loginFailed = true;
+            });
+    }
+
+    private logout() {
+        this.authService.logout
+    }
 
   ngOnInit(): void {
     let now = new Date();

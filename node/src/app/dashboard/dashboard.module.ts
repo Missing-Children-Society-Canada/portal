@@ -16,6 +16,7 @@ import { GeoLocationsWidget } from './geo-locations-widget/geo-locations-widget.
 import { MarketStatsWidget } from './market-stats-widget/market-stats-widget.component';
 import { BootstrapCalendar } from './bootstrap-calendar/bootstrap-calendar.component';
 import { DataService } from "../services/data/data.service";
+import { AuthService } from '../services/auth/auth.service';
 
 export const routes = [
   { path: '', component: Dashboard, pathMatch: 'full' }
@@ -37,7 +38,8 @@ export const routes = [
     MarketStatsWidget
   ],
   providers: [
-    DataService
+    DataService,
+     AuthService
   ]
 })
 export class DashboardModule {

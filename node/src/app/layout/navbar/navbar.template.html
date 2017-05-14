@@ -55,11 +55,12 @@
     <ul class="nav navbar-nav flex-row float-right" (click)="$event.preventDefault()">
       <li class="nav-item" [hidden]="authService.authenticated">
         <div style="padding:14px">
-          (login button)
+          <button (click)="authService.login()" type="button" *ngIf="!authService.authenticated">Login</button>
         </div>
       </li>
       <li class="nav-item" [hidden]="!authService.authenticated">
         <div style="padding:14px">
+          <button (click)="authService.logout()" type="button" *ngIf="authService.authenticated">Logout</button>
           {{authService.user.name}}
         </div>
       </li>
