@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { AuthService } from "../services/auth/auth.service";
 
 @Component({
   selector: 'login',
@@ -10,7 +11,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   }
 })
 export class Login {
-  constructor() {
+  constructor(private authService: AuthService) {
 
   }
 }
