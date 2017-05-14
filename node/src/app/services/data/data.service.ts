@@ -10,7 +10,8 @@ export class DataService {
 
     constructor(private http: Http) {
         this.http
-            .get("https://mscs-cf-functions.azurewebsites.net/api/profiles")
+            //.get("https://mscs-cf-functions.azurewebsites.net/api/profiles")
+            .get("https://mcsc-supporting-api.azurewebsites.net/api/profiles")
             .map(r => r.json())
             .subscribe(p => this.persons = p, console.log);
     }
