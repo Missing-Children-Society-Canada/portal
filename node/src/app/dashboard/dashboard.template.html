@@ -11,52 +11,31 @@
     <section class="widget bg-transparent">
       <!-- .widget-body is a mostly semantic class. may be a sibling to .widget>header or .widget>footer -->
       <div class="widget-body">
-
-
         <section widget class="widget">
           <!-- .widget>header is generally a place for widget title and widget controls. see .widget in _base.scss -->
           <header>
             <h6>
-              MISSING PERSONS
+              ALL MISSING PERSONS
             </h6>
             <div class="widget-controls">
-              <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
             </div>
           </header>
-          <div class="widget-body">
-            <table style="width:100%;">
+          <div class="widget-body"><table style="width:100%;">
               <thead>
                 <td><strong>Name</strong></td>
                 <td><strong>Date</strong></td>
-                <td><strong>Time</strong></td>
-                <td><strong>Social</strong></td>
+                <td><strong>Image</strong></td>
               </thead>
               <tbody>
-                <tr *ngFor="let person of dataService.persons">
-                  <td>{{person.name}}</td>
-                  <td>{{person.datetime | date}}</td>
-                  <td>{{person.datetime | date:"jms"}}</td>
-                  <td>
-                    <div style="display:flex;justify-content:space-between;">
-                      <div style="width:24px;">
-                        <span [hidden]="!person.twitter">X</span>
-                      </div>
-                      <div style="width:24px;">
-                        <span [hidden]="!person.facebook">X</span>
-                      </div>
-                      <div style="width:24px;">
-                        <span [hidden]="!person.instagram">X</span>
-                      </div>
-                    </div>
-                  </td>
+                <tr *ngFor="let person of dataService.persons" (click)="selectPerson(person.id)">
+                  <td>{{person.firstname}} {{person.lastname}}</td>
+                  <td>{{person.datetime}}</td>
+                  <td><img src={{person.image}} style="width:50px;height:50px;"></td>
                 </tr>
               </tbody>
             </table>
-
           </div>
         </section>
-
-
       </div>
     </section>
   </div>

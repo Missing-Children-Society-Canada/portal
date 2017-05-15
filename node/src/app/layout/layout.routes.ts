@@ -13,6 +13,7 @@ const routes: Routes = [
     { path: 'inbox', loadChildren: '../inbox/inbox.module#InboxModule'},
     { path: 'charts', loadChildren: '../charts/charts.module#ChartsModule'},
     { path: 'profile', loadChildren: '../profile/profile.module#ProfileModule'},
+    { path: 'person', loadChildren: '../person/person.module#PersonModule'},
     { path: 'forms', loadChildren: '../forms/forms.module#FormModule' },
     { path: 'ui', loadChildren: '../ui-elements/ui-elements.module#UiElementsModule' },
     { path: 'extra', loadChildren: '../extra/extra.module#ExtraModule' },

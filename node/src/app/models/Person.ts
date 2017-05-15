@@ -1,9 +1,10 @@
 export class Person {
-    "id": string;
-    "name": string;
-    "picture": string;
-    "datetime": Date;
-    "twitter": boolean;
-    "facebook": boolean;
-    "instagram": boolean;
+    id: string;
+    firstname: string;
+    lastname: string
+    datetime: string;
+    image: string;
+    twitter: boolean;
+    facebook: boolean;
+    instagram: boolean;
 }
