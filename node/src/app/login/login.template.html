@@ -12,7 +12,8 @@
           </header>
           <div class="widget-body">
             <p class="widget-login-info">
-              To request access please contact Missing Children Society of Canada.
+              <a *ngIf="!authService.authenticated">To request access please contact Missing Children Society of Canada.</a>
+              <a *ngIf="authService.authenticated">Welcome {{authService.user.name}}!</a>
             </p>
             <p class="widget-login-info">
             </p>

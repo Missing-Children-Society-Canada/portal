@@ -7,36 +7,38 @@ declare var Msal: any;
 
 @Injectable()
 export class AuthService {
-
-    private applicationConfig: 
-    any = {
-        clientID: '3290823d-3c12-4b48-8462-c590e393de66',
-        graphScopes: ['user.read']
-    };
-    private client: any;
+    client: any;
     authenticated:boolean = false;
+    public user : any;
 
-    public user = { };
     constructor(private http: Http) {
-        this.client = new Msal.UserAgentApplication('3290823d-3c12-4b48-8462-c590e393de66', null, (errorDesc, token, error, tokenType) => {
-            if (token) { }
+        this.client = new Msal.UserAgentApplication('8c2ebb64-2b44-4215-a86a-c50db07b0ecc', 'https://login.microsoftonline.com/6044a321-e0b8-4797-8651-e2722761fad9'
+        , (errorDesc, token, error, tokenType) => {
+            if (token) {
+                 console.log("Heck yeah got a token");
+             }
             else {
                 console.log(error + ":" + errorDesc);
             }
         });
-        console.log('this.client: ' + this.client);
     }
 
     login() {
-        return this.client.loginPopup(this.applicationConfig.graphScopes)
+        return this.client.loginPopup()
             .then(idToken => {
-                const user = this.client.getUser();
-                if (user) {
-                    return user;
+                 this.user = this.client.getUser();
+                if (this.user) {
+                    console.log("Authenticated successfully!")
+                    this.authenticated = true;
+                    return this.user;
                 } else {
+                     console.log("Not authenticated :(")
+                    this.authenticated = false;
                     return null;
                 }
             }, () => {
+                 console.log("Not authenticated :(")
+                this.authenticated = false;
                 return null;
             });
     }
@@ -46,12 +48,12 @@ export class AuthService {
         this.authenticated = false;
     }
     
-    public getToken() {
-        return this.client.acquireTokenSilent(this.applicationConfig.graphScopes)
+    getToken() {
+        return this.client.acquireTokenSilent()
             .then(accessToken => {
                 return accessToken;
             }, error => {
-                return this.client.acquireTokenPopup(this.applicationConfig.graphScopes)
+                return this.client.acquireTokenPopup()
                     .then(accessToken => {
                         return accessToken;
                     }, err => {
