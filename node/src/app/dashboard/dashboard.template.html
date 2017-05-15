@@ -31,7 +31,9 @@
               </thead>
               <tbody>
                 <tr *ngFor="let person of dataService.profiles">
-                  <td><button onclick="this.selectPerson()">Select</button><td>
+                   <td><button class="btn btn-primary" type="button" #elem
+                   (click)="selectPerson(elem.id)" [id]="person.id"
+                  >Select</button><td>
                   <td>{{person.id}}</td>
                   <td>{{person.firstname}}</td>
                   <td>{{person.lastname}}</td>

@@ -28,13 +28,13 @@ export class Dashboard {
     this.year = now.getFullYear();
   }
 
-  selectPerson()
+  selectPerson(id: string) : void
   {
-    var id = "";
     console.log("In on selected!");
     this.selectedId = id;
     this.selected = true;
-    console.log("Child Selected"+ id);
+    console.log("Child Selected "+ id);
+    console.log("Child Selected "+ this.selectedId);
 
   }
 
