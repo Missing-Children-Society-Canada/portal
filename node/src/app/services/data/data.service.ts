@@ -11,20 +11,19 @@ export class DataService {
         this.getAllPersons();
     }
 
-    getPerson(id:number|string) {
+    getPerson(id: number | string) {
         return Promise.resolve(this.persons)
             .then(persons => persons.find(p => p.id == id))
     }
 
     getAllPersons() {
-        // this.http.get("https://mcsc-supporting-api.azurewebsites.net/api/profiles")
-        this.http.get("/assets/mock-data/persons.json")
-            .subscribe((response: Response) => {
-                this.persons = response.json();
-            },
-
-            (error: Response) => {
-                console.log("Get persons Error");
-            });
+        this.http.get("https://mcsc-supporting-api.azurewebsites.net/api/profiles")
+            .map(r => r.json())
+            .subscribe(
+                p => this.persons = JSON.parse(p),
+                err => {
+                    console.log("Get persons error");
+                }
+            );
     }
 }
