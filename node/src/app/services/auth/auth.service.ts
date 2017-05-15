@@ -14,7 +14,7 @@ export class AuthService {
         graphScopes: ['user.read']
     };
     private client: any;
-    authenticated:boolean = false;
+    authenticated:boolean = true;
 
     public user = { };
     constructor(private http: Http) {

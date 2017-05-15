@@ -13,6 +13,8 @@ export class Dashboard {
   config: any;
   month: any;
   year: any;
+  selected: boolean = false;
+  selectedId: string;
 
   constructor(config: AppConfig, private dataService: DataService, private authService: AuthService) {
     this.config = config.getConfig();
@@ -24,6 +26,16 @@ export class Dashboard {
     let now = new Date();
     this.month = now.getMonth() + 1;
     this.year = now.getFullYear();
+  }
+
+  selectPerson()
+  {
+    var id = "";
+    console.log("In on selected!");
+    this.selectedId = id;
+    this.selected = true;
+    console.log("Child Selected"+ id);
+
   }
 
 }
