@@ -6,7 +6,8 @@ import { RouterModule } from '@angular/router';
 import { PersonComponent } from './person.component';
 
 export const routes = [
-  {path: '', component: PersonComponent, pathMatch: 'full'}
+  {path: '', component: PersonComponent, pathMatch: 'full'},
+  {path: ':id', component: PersonComponent}
 ];
 
 @NgModule({
@@ -18,6 +19,8 @@ export const routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
+  ],
+  providers: [
   ]
 })
 export class PersonModule {
