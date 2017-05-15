@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, Pipe, PipeTransform } from '@angular/core
 import { AppConfig } from '../app.config';
 import { DataService } from "../services/data/data.service";
 import { AuthService } from "../services/auth/auth.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'dashboard',
@@ -16,10 +17,10 @@ export class Dashboard {
   selected: boolean = false;
   selectedId: string;
 
-  constructor(config: AppConfig, private dataService: DataService, private authService: AuthService) {
+  constructor(config: AppConfig, private dataService: DataService, private authService: AuthService, private router: Router) {
     this.config = config.getConfig();
     // authService.login().then(user => console.log(user.name));
-    
+
   }
 
   ngOnInit(): void {
@@ -28,14 +29,8 @@ export class Dashboard {
     this.year = now.getFullYear();
   }
 
-  selectPerson(id: string) : void
-  {
-    console.log("In on selected!");
-    this.selectedId = id;
-    this.selected = true;
-    console.log("Child Selected "+ id);
-    console.log("Child Selected "+ this.selectedId);
-
+  selectPerson(id: number): void {
+    this.router.navigate(['/app/person/', id]);
   }
 
 }

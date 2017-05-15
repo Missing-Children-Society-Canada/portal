@@ -22,21 +22,13 @@
           </header>
           <div class="widget-body"><table style="width:100%;">
               <thead>
-                <td><strong>Select</strong></td>
-                <td><strong>Id</strong></td>
-                <td><strong>First Name</strong></td>
-                <td><strong>Last Name</strong></td>
+                <td><strong>Name</strong></td>
                 <td><strong>Date</strong></td>
                 <td><strong>Image</strong></td>
               </thead>
               <tbody>
-                <tr *ngFor="let person of dataService.profiles">
-                   <td><button class="btn btn-primary" type="button" #elem
-                   (click)="selectPerson(elem.id)" [id]="person.id"
-                  >Select</button><td>
-                  <td>{{person.id}}</td>
-                  <td>{{person.firstname}}</td>
-                  <td>{{person.lastname}}</td>
+                <tr *ngFor="let person of dataService.persons" (click)="selectPerson(person.id)">
+                  <td>{{person.firstname}} {{person.lastname}}</td>
                   <td>{{person.datetime}}</td>
                   <td><img src={{person.image}} style="width:50px;height:50px;"></td>
                 </tr>
