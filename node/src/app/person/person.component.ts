@@ -19,20 +19,12 @@ export class PersonComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // let x = this.dataService.getPerson(3);
-    let ds = this.dataService;
+    let that = this;
     this.route.params.subscribe(params => {
-      let person = ds.persons.find(person => {
-        return person.id == params.id
+      that.dataService.getPerson(params.id).then(fetchedPerson => {
+        that.person = fetchedPerson;
       });
     });
-    // this.route.params
-    //   .switchMap((params: Params, i:number) => {
-    //     return this.dataService.getPerson(+params['id'])
-    //   })
-    //   .subscribe((person: Person) => {
-    //     return this.person = person
-    //   });
   }
 
 }
