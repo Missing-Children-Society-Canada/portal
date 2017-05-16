@@ -8,6 +8,7 @@ declare var Msal: any;
 @Injectable()
 export class AuthService {
     client: any;
+    authenticated:boolean = true;
     public user : any = {};
 
     constructor(private http: Http) {
