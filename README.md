@@ -1,37 +1,10 @@
-# Sing Dashboard App (3.6.0 Full version) with Angular 4.0 Final Release support
-
-
-> An Angular 4 application featuring [Angular 4](https://angular.io)
- ([Router](https://angular.io/docs/js/latest/api/router/), [Forms](https://angular.io/docs/js/latest/api/forms/),
-[Http](https://angular.io/docs/js/latest/api/http/),
- [TypeScript](http://www.typescriptlang.org/),
-  [@types](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwjgjdrR7u_NAhUQ7GMKHXgpC4EQFggnMAI&url=https%3A%2F%2Fwww.npmjs.com%2F~types&usg=AFQjCNG2PFhwEo88JKo12mrw_4d0w1oNiA&sig2=N69zbO0yN8ET7v4KVCUOKA), 
-  [TsLint](http://palantir.github.io/tslint/), 
-  [Hot Module Replacement](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html), a
-  nd [Webpack 2](http://webpack.github.io/) by [Flatlogic](https://flatlogic.com).
-  
-> This is a full version of Sing App with Angular 4.0 Final Release support. Seed version is also available.
-
-This project serves as an Angular 4 starter for anyone looking to get up and running with Angular 4 and TypeScript fast.
- Using a [Webpack 2](http://webpack.github.io/) for building our files and assisting with boilerplate. 
-* Best practices in file and application organization for Angular 4.
-* Unique to admin templates stylish and unobtrusive design
-* Ready to go build system using Webpack for working with TypeScript.
-* Angular 4 examples that are ready to go when experimenting with Angular 4.
-* Ahead of Time (AoT) compile for rapid page loads of your production builds.
-* Tree shaking to automatically remove unused code from your production bundle.
-* A great Angular 4 template for anyone who wants to start their project.
-* Type manager with @types
-* Hot Module Replacement with Webpack and [@angularclass/hmr](https://github.com/angularclass/angular2-hmr) and [@angularclass/hmr-loader](https://github.com/angularclass/angular2-hmr-loader)
+# Missing Children Society of Canada
 
 ### Quick start
 **Make sure you have Node version >= 5.0 and NPM >= 3**
-> Clone/Download the repo then edit `app.ts` inside [`/src/app/app.ts`](/src/app/app.ts)
+> Clone the repo then edit `app.ts` inside [`/src/app/app.ts`](/src/app/app.ts)
 
-```bash
-# change directory to our repo
-cd sing/angular2
-
+``` bash
 # install the repo with npm
 npm install
 
@@ -41,7 +14,7 @@ npm start
 # use Hot Module Replacement
 npm run server:dev:hmr
 ```
-go to [http://0.0.0.0:3000](http://0.0.0.0:3000) or [http://localhost:3000](http://localhost:3000) in your browser
+go to [http://localhost:3000](http://localhost:3000) in your browser
 
 # Table of Contents
 * [File Structure](#file-structure)
@@ -96,51 +69,6 @@ sing/angular2/
 
 ```
 
-# Getting Started
-## Dependencies
-What you need to run this app:
-* `node` and `npm` (`brew install node`)
-* Ensure you're running the latest versions Node `v4.x.x`+ (or `v5.x.x`) and NPM `3.x.x`+
-
-> If you have `nvm` installed, which is highly recommended (`brew install nvm`) you can do
- a `nvm install --lts && nvm use` in `$` to run with the latest Node LTS. You can also have this `zsh` done for
-  you [automatically](https://github.com/creationix/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file) 
-
-## Installing
-* `npm install` to install all dependencies
-* `npm run server` to start the dev server in another tab
-
-### server
-```bash
-# development
-npm run server
-# production
-npm run build:prod
-npm run server:prod
-```
-
-## Other commands
-
-### build files
-```bash
-# development
-npm run build:dev
-# production
-npm run build:prod
-# AoT
-npm run build:aot
-```
-
-### hot module replacement
-```bash
-npm run server:dev:hmr
-```
-
-### watch and build files
-```bash
-npm run watch
-```
-
 # Configuration
 Configuration files live in `config/`. We are currently using webpack.
 
@@ -160,7 +88,7 @@ Type Definitions with @types
 
 i.e, to have youtube api support, run this command in terminal: 
 ```shell
-npm i @types/youtube @types/gapi @types/gapi.youtube
+npm install @types/youtube @types/gapi @types/gapi.youtube
 ``` 
 In some cases where your code editor doesn't support Typescript 2 yet or these types weren't listed in ```tsconfig.json```, 
 add these to **"src/custom-typings.d.ts"** to make peace with the compile check: 
@@ -188,7 +116,6 @@ declare module "my-module" {
 }
 ```
 
-
 If you're prototyping and you will fix the types later you can also declare it as type any
 
 ```typescript
@@ -202,14 +129,3 @@ If you're importing a module that uses Node.js modules which are CommonJS you ne
 ```typescript
 import * as _ from 'lodash';
 ```
-
-# Support, Questions, or Feedback
-> Contact us anytime for anything about this Sing App or Angular 4 consulting.
-
-* [Twitter: @Flatlogic](https://twitter.com/Flatlogic)
-* [Email: contact@flatlogic.com](mailto:contact@flatlogic.com)
-
-# License
-[Wrapbootstrap licence](http://support.wrapbootstrap.com/knowledge_base/topics/usage-licenses).
-
-Sing App 3.6.0 is based on [angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter).
