@@ -10,19 +10,21 @@ import { Person } from "../models/Person";
   styleUrls: ['./person.style.scss']
 })
 export class PersonComponent implements OnInit {
-  person: Person;
+  person = {};
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private dataService: DataService
-  ) {}
+  ) { }
 
   ngOnInit() {
-    this.route.params
-      // (+) converts string 'id' to a number
-      .switchMap((params: Params) => this.dataService.getPerson(+params['id']))
-      .subscribe((person: Person) => this.person = person);
+    let that = this;
+    this.route.params.subscribe(params => {
+      that.dataService.getPerson(params.id).then(fetchedPerson => {
+        that.person = fetchedPerson;
+      });
+    });
   }
 
 }

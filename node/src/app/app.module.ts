@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 import { AuthService } from '../app/services/auth/auth.service';
+import { DataService } from '../app/services/data/data.service';
 import { AuthGuard } from './guards/index';
 
 /*
@@ -24,7 +25,8 @@ const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
   AppState,
   AppConfig,
-  AuthService
+  AuthService,
+  DataService
 ];
 
 type StoreType = {
@@ -51,7 +53,7 @@ type StoreType = {
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
-    AuthGuard,
+    AuthGuard
   ]
 })
 export class AppModule {

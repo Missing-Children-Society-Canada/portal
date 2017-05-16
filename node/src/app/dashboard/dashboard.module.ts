@@ -15,7 +15,6 @@ import { RickshawChartModule } from '../components/rickshaw/rickshaw.module';
 import { GeoLocationsWidget } from './geo-locations-widget/geo-locations-widget.directive';
 import { MarketStatsWidget } from './market-stats-widget/market-stats-widget.component';
 import { BootstrapCalendar } from './bootstrap-calendar/bootstrap-calendar.component';
-import { DataService } from "../services/data/data.service";
 import { AuthService } from '../services/auth/auth.service';
 
 export const routes = [
@@ -38,7 +37,6 @@ export const routes = [
     MarketStatsWidget
   ],
   providers: [
-    DataService,
      AuthService
   ]
 })
