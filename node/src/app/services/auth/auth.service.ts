@@ -8,8 +8,7 @@ declare var Msal: any;
 @Injectable()
 export class AuthService {
     client: any;
-    authenticated:boolean = false;
-    public user : any;
+    public user : any = {};
 
     constructor(private http: Http) {
         this.client = new Msal.UserAgentApplication('8c2ebb64-2b44-4215-a86a-c50db07b0ecc', 'https://login.microsoftonline.com/6044a321-e0b8-4797-8651-e2722761fad9'
