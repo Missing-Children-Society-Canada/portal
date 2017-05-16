@@ -19,6 +19,7 @@ export class DataService {
 
     getPersons() {
         let that = this;
+        //use these two lines instead of the next two to pull from the api
         // return this.http.get("https://mcsc-supporting-api.azurewebsites.net/api/profiles")
         //     .map(response => JSON.parse(response.json()))
         return this.http.get("/assets/mock-data/persons.json")
