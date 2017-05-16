@@ -2,7 +2,7 @@
   <li class="breadcrumb-item">YOU ARE HERE</li>
   <li class="active breadcrumb-item">Profile</li>
 </ol>
-<h1 class="page-title">User - <span class="fw-semi-bold">Person {{person.id}}</span></h1>
+<h1 class="page-title">{{person.firstname}} <span class="fw-semi-bold">{{person.lastname}}</span></h1>
 <div class="row profile">
   <div class="col-lg-6 col-12">
     <section class="widget">
@@ -22,7 +22,7 @@
           <div class="col-md-5 col-12 text-center">
             <div class="post-user post-user-profile">
               <span class="thumb-xlg">
-                <img class="rounded-circle" src="assets/img/people/a5.jpg" alt="...">
+                <img class="rounded-circle" src="{{person.image}}" alt="...">
               </span>
               <h5 class="fw-normal">Adam <span class="fw-semi-bold">Johns</span></h5>
               <p>UI/UX designer</p>
@@ -31,9 +31,9 @@
                 <i class="fa fa-envelope ml-xs"></i>&nbsp;
               </a>
               <ul class="contacts">
-                <li><i class="fa fa-phone fa-fw mr-xs"></i><a href="#"> +375 29 555-55-55</a></li>
-                <li><i class="fa fa-envelope fa-fw mr-xs"></i><a href="#"> psmith@example.com</a></li>
-                <li><i class="fa fa-map-marker fa-fw mr-xs"></i><a href="#"> Minsk, Belarus</a></li>
+                <li><i class="fa fa-phone fa-fw mr-xs"></i><a href="#"> +{{person.telephoneCountryCode}} {{person.telephoneNumber}}</a></li>
+                <li><i class="fa fa-envelope fa-fw mr-xs"></i><a href="#"> {{person.emailAddress}}</a></li>
+                <li><i class="fa fa-map-marker fa-fw mr-xs"></i><a href="#"> {{person.countryFull}}</a></li>
               </ul>
             </div>
           </div>
