@@ -39,8 +39,8 @@
     "latitude": 41.779006,
     "longitude": -87.53083,
     "school": "Central Academy",
-    "hairColor": "Brown",
-    "hairStyle": "Short",
+    "hairColor": "Light Brown",
+    "hairStyle": "Long, Straight",
     "bodyBuild": "Average",
     "facialHair": "none",
     "marks": "none",
@@ -98,9 +98,9 @@
     "hairColor": "Brown",
     "hairStyle": "Short",
     "bodyBuild": "Average",
-    "facialHair": "none",
+    "facialHair": "Beard",
     "marks": "none",
-    "jewelry": "Ring",
+    "jewelry": "None",
     "contacts": [
       {"name": "Joe", "contactType": "Twitter", "communicationType": "Friendly"},
       {"name": "Mark", "contactType": "Twitter", "communicationType": "Friendly"}
@@ -154,7 +154,7 @@
     "hairColor": "Brown",
     "hairStyle": "Short",
     "bodyBuild": "Average",
-    "facialHair": "none",
+    "facialHair": "Beard and Mustache",
     "marks": "none",
     "jewelry": "Ring",
     "contacts": [
@@ -208,11 +208,11 @@
     "longitude": -98.459284,
     "school": "Central Academy",
     "hairColor": "Brown",
-    "hairStyle": "Short",
+    "hairStyle": "Long",
     "bodyBuild": "Average",
     "facialHair": "none",
     "marks": "none",
-    "jewelry": "Ring",
+    "jewelry": "Earrings",
     "contacts": [
       {"name": "Joe", "contactType": "Twitter", "communicationType": "Friendly"},
       {"name": "Mark", "contactType": "Twitter", "communicationType": "Friendly"}
@@ -263,12 +263,12 @@
     "latitude": 41.576033,
     "longitude": -93.793191,
     "school": "Central Academy",
-    "hairColor": "Brown",
-    "hairStyle": "Short",
+    "hairColor": "Blonde",
+    "hairStyle": "Long",
     "bodyBuild": "Average",
     "facialHair": "none",
     "marks": "none",
-    "jewelry": "Ring",
+    "jewelry": "Necklace",
     "contacts": [
       {"name": "Joe", "contactType": "Twitter", "communicationType": "Friendly"},
       {"name": "Mark", "contactType": "Twitter", "communicationType": "Friendly"}
@@ -319,12 +319,12 @@
     "latitude": 41.295996,
     "longitude": -95.836121,
     "school": "Central Academy",
-    "hairColor": "Brown",
-    "hairStyle": "Short",
+    "hairColor": "Blonde",
+    "hairStyle": "Long",
     "bodyBuild": "Average",
     "facialHair": "none",
     "marks": "none",
-    "jewelry": "Ring",
+    "jewelry": "Bracelet",
     "contacts": [
       {"name": "Joe", "contactType": "Twitter", "communicationType": "Friendly"},
       {"name": "Mark", "contactType": "Twitter", "communicationType": "Friendly"}
