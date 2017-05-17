@@ -22,15 +22,15 @@
           </header>
           <div class="widget-body"><table style="width:100%;">
               <thead>
+                <td><strong>Image</strong></td>
                 <td><strong>Name</strong></td>
                 <td><strong>Date of Birth</strong></td>
-                <td><strong>Image</strong></td>
               </thead>
               <tbody>
                 <tr *ngFor="let person of dataService.persons" (click)="selectPerson(person.id)" class="person-row">
+                  <td><img src={{person.image}} style="width:50px;height:50px;"></td>
                   <td>{{person.givenName}} {{person.surname}}</td>
                   <td>{{person.birthday}}</td>
-                  <td><img src={{person.image}} style="width:50px;height:50px;"></td>
                 </tr>
               </tbody>
             </table>
