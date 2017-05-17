@@ -13,6 +13,39 @@ export class DataService {
         this.getPersons();
     }
 
+
+    sendOutEmailInvite(email: string, id : string)
+    {
+        // What to do with the response???
+        this.http.put("https://mcsc-supporting-api.azurewebsites.net/api/invite",
+        {
+            'email' : email,
+            'id' : id
+        });
+        
+    }
+
+    verifyToken (url: string) : boolean
+    {
+        // Parse out the token
+        console.log("URL: " + url)
+
+        var token = ""; 
+        // Parse out the profile ID
+        var id = "";
+        
+        console.log("Token: " + token + " Profile Id: "+ id);
+
+        // Check to make sure the token and id match!
+        // Make some call to a dataservice....
+        this.http.get("https://mcsc-supporting-api.azurewebsites.net/api/verify?access_token={token}&id={id}")
+        .map(response => JSON.parse(response.json()));
+
+        /*
+        */
+        return true;
+    }
+
     getPerson(id: number | string) {
         return this.getPersons().then(pp => pp.find(p => p.id == id));
     }
