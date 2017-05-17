@@ -17,10 +17,17 @@
             <img class="img-fluid" src="assets/img/pictures/19.jpg">
           </div>
           <div class="btn-toolbar">
-            <a href="#" class="btn btn-outline btn-sm pull-right">
-              <i class="fa fa-twitter mr-xs"></i>
-              Follow
-            </a>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" [(ngModel)]="emailTo" *ngIf="authService.authenticated"/>
+                <a (click)="sendEmail(emailTo, person.id)" class="btn btn-outline btn-sm pull-right" *ngIf="authService.authenticated">
+                  <i class="fa fa-envelope fa-fw mr-xs"></i>
+                  Send Data
+                </a>
+                <div [hidden]="!emailSent">
+                  Email Sent to: {{emailTo}}
+                </div>
+            </div>
           </div>
         </div>
         <div class="row">

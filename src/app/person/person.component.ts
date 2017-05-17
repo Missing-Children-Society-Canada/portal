@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { DataService } from "../services/data/data.service";
+
+import { AuthService } from "../services/auth/auth.service";
 import { Person } from "../models/Person";
 
 @Component({
@@ -12,10 +14,14 @@ import { Person } from "../models/Person";
 export class PersonComponent implements OnInit {
   person = {};
 
+  emailTo: String;
+  emailSent: boolean = false;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private dataService: DataService
+    private dataService: DataService,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -25,6 +31,13 @@ export class PersonComponent implements OnInit {
         that.person = fetchedPerson;
       });
     });
+  }
+
+  sendEmail(email : string, id : string)
+  {
+    this.dataService.sendEmailInvite(email, id);
+    this.emailSent = true;
+    
   }
 
 }
