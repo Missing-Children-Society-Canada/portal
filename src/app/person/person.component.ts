@@ -35,8 +35,15 @@ export class PersonComponent implements OnInit {
 
   sendEmail(email : string, id : string)
   {
-    this.dataService.sendEmailInvite(email, id);
-    this.emailSent = true;
+    if (email != null)
+    {
+      this.dataService.sendEmailInvite(email, id);
+      this.emailSent = true;
+    }
+    else
+    {
+      this.emailSent = false;
+    }
     
   }
 

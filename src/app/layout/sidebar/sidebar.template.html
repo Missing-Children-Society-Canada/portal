@@ -60,7 +60,7 @@
         Charts
       </a>
     </li>
-    <li>
+    <li [hidden]="!config.settings.showExtraUI">
       <a [routerLink]=" ['profile'] ">
           <span class="icon">
             <i class="glyphicon glyphicon-user"></i>
