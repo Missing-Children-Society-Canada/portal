@@ -2,7 +2,7 @@
   <li class="breadcrumb-item">YOU ARE HERE</li>
   <li class="active breadcrumb-item">Profile</li>
 </ol>
-<h1 class="page-title">{{person.firstname}} <span class="fw-semi-bold">{{person.lastname}}</span></h1>
+<h1 class="page-title">{{person.givenName}} <span class="fw-semi-bold">{{person.surName}}</span></h1>
 <div class="row profile">
   <div class="col-lg-6 col-12">
     <section class="widget">
@@ -24,11 +24,11 @@
               <span class="thumb-xlg">
                 <img class="rounded-circle" src="{{person.image}}" alt="...">
               </span>
-              <h5 class="fw-normal">Adam <span class="fw-semi-bold">Johns</span></h5>
-              <p>UI/UX designer</p>
+              <h5 class="fw-normal">{{person.title}} {{person.givenName}} {{person.middleInitial}} <span class="fw-semi-bold">{{person.surname}} </span></h5>
+              <p>{{person.gender}}</p>
               <ul class="contacts">
                 <li><i class="fa fa-phone fa-fw mr-xs"></i><a href="#"> +{{person.telephoneCountryCode}} {{person.telephoneNumber}}</a></li>
-                <li><i class="fa fa-envelope fa-fw mr-xs"></i><a href="#"> {{person.emailAddress}}</a></li>
+                <li><i class="fa fa-envelope fa-fw mr-xs"></i><a href="mailto:{{person.emailAddress}}"> {{person.emailAddress}}</a></li>
                 <li><i class="fa fa-map-marker fa-fw mr-xs"></i><a href="#"> {{person.countryFull}}</a></li>
               </ul>
             </div>
@@ -41,37 +41,99 @@
     <section class="activities">
       <h2 class="m-l-1">Details</h2>
       <table>
-        <tr><td>Nickname</td><td>{{person.nickname}}</td></tr>
-        <tr><td>Address</td><td>{{person.streetAddress}}</td></tr>
-        <tr><td>School</td><td>{{person.school}}</td></tr>
-        <tr><td>DOB</td><td>{{person.birthday}}</td></tr>
-        <tr><td>Gender</td><td>{{person.gender}}</td></tr>
-        <tr><td>Height</td><td>{{person.centimeters}}</td></tr>
-        <tr><td>Eye Color</td><td>{{person.eyeColor}}</td></tr>
-        <tr><td>Hair Color</td><td>{{person.hairColor}}</td></tr>
-        <tr><td>Hair Style</td><td>{{person.hairStyle}}</td></tr>
-        <tr><td>Body Build</td><td>{{person.bodyBuild}}</td></tr>
-        <tr><td>Facial Hair</td><td>{{person.facialHair}}</td></tr>
-        <tr><td>Marks</td><td>{{person.marks}}</td></tr>
-        <tr><td>Jewelery</td><td>{{person.jewelery}}</td></tr>
         <tr>
-            <td>Social</td>
-            <td>
-              Twitter
-              Instagram
-              Facebook
-            </td>
-          </tr>
-        <tr><td>Last Known Location</td><td>{{person.latitude}} {{person.longitude}}</td></tr>
+          <td>Nickname</td>
+          <td>{{person.nickname}}</td>
+        </tr>
         <tr>
-            <td>Contact With</td>
-            <td>
-              <table>
-                <tr><td>Nastassia Rashid</td><td>Friendly</td></tr>
-                <tr><td>Anthony Bartolo</td><td>Aggressive</td></tr>
-              </table>
+          <td style="vertical-align: top">Address</td>
+          <td style="vertical-align: top">
+            {{person.streetAddress}}<br> {{person.city}}, {{person.state}}<br> {{person.zipCode}}
+          </td>
+        </tr>
+        <tr>
+          <td>School</td>
+          <td>{{person.school}}</td>
+        </tr>
+        <tr>
+          <td>DOB</td>
+          <td>{{person.birthday}}</td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>{{person.gender}}</td>
+        </tr>
+        <tr>
+          <td>Height</td>
+          <td>{{person.centimeters}}</td>
+        </tr>
+        <tr>
+          <td>Eye Color</td>
+          <td>{{person.eyeColor}}</td>
+        </tr>
+        <tr>
+          <td>Hair Color</td>
+          <td>{{person.hairColor}}</td>
+        </tr>
+        <tr>
+          <td>Hair Style</td>
+          <td>{{person.hairStyle}}</td>
+        </tr>
+        <tr>
+          <td>Body Build</td>
+          <td>{{person.bodyBuild}}</td>
+        </tr>
+        <tr>
+          <td>Facial Hair</td>
+          <td>{{person.facialHair}}</td>
+        </tr>
+        <tr>
+          <td>Marks</td>
+          <td>{{person.marks}}</td>
+        </tr>
+        <tr>
+          <td>Jewelry</td>
+          <td>{{person.jewelry}}</td>
+        </tr>
+        <tr>
+          <td>Social</td>
+          <td>
+            <table>
+              <tr *ngFor="let socialNetwork of person.socialNetworks">
+                <td>{{socialNetwork.platform}}</td>
+                <td>{{socialNetwork.userId}}</td>
+              </tr>
+            </table>
+            
+          </td>
+        </tr>
+        <tr>
+          <td>Last Known Location</td>
+          <td>
+            <a target="_blank" 
+              href="https://www.bing.com/maps?q=latitude+{{person.latitude}}%2c+longitude+{{person.longitude}}">
+            lat: {{person.latitude | number:0.00}}, 
+            lon: {{person.longitude | number:0.00}}
+            </a>
             </td>
-          </tr>
+        </tr>
+        <tr>
+          <td style="vertical-align: top">Contact With</td>
+          <td style="vertical-align: top">
+            <table>
+              <tr>
+                <th>Name</th>
+                <th>Contact Type</th>
+                <th>Communication Type</th>
+              </tr>
+              <tr *ngFor="let contact of person.contacts">
+                <td>{{contact.name}}</td>
+                <td>{{contact.contactType}}</td>
+                <td>{{contact.communicationType}}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
       </table>
     </section>
   </div>
