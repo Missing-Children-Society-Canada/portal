@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
 import { PersonComponent } from './person.component';
 
 export const routes = [
@@ -13,7 +13,8 @@ export const routes = [
     PersonComponent
   ],
   imports: [
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    CommonModule
   ]
 })
 export class PersonModule {

@@ -23,24 +23,6 @@ export class AuthService {
         });
     }
 
-checkOneTimeAccessToken(url: string) :boolean
-{
-    // Parse out the token
-    console.log("URL: " + url)
-
-    var token = ""; 
-    // Parse out the profile ID
-    var profileId = "";
-    
-    console.log("Token: " + token + " Profile Id: "+ profileId);
-
-    // Check to make sure the token and id match!
-    // Make some call to a dataservice....
-    
-    return true;
-
-}
-
     login() {
         return this.client.loginPopup()
             .then(idToken => {
@@ -48,6 +30,8 @@ checkOneTimeAccessToken(url: string) :boolean
                 if (this.user) {
                     console.log("Authenticated successfully!")
                     this.authenticated = true;
+                    var x = JSON.stringify(this.user);
+                    console.log("User :" + x);
                     return this.user;
                 } else {
                      console.log("Not authenticated :(")
