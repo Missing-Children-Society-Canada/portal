@@ -24,8 +24,8 @@
               <span class="thumb-xlg">
                 <img class="rounded-circle" src="{{person.image}}" alt="...">
               </span>
-              <h5 class="fw-normal">Adam <span class="fw-semi-bold">Johns</span></h5>
-              <p>UI/UX designer</p>
+              <h5 class="fw-normal">{{person.givenName}} <span class="fw-semi-bold">{{person.surname}}</span></h5>
+              <p>{{person.gender}}</p>
               <ul class="contacts">
                 <li><i class="fa fa-phone fa-fw mr-xs"></i><a href="#"> +{{person.telephoneCountryCode}} {{person.telephoneNumber}}</a></li>
                 <li><i class="fa fa-envelope fa-fw mr-xs"></i><a href="#"> {{person.emailAddress}}</a></li>
