@@ -26,7 +26,8 @@
                 <div class="btn-toolbar float-center m-t-1">
                   <button class="btn btn-secondary btn-sm" (click)="authService.login()" type="button" *ngIf="!authService.authenticated">Login As Admin</button>
                   <button class="btn btn-secondary btn-sm" (click)="authService.login()" type="button" *ngIf="!authService.authenticated">Login As Guest</button>
-                  <button class="btn btn-inverse btn-sm" [routerLink]="['/app', 'dashboard'] " *ngIf="authService.authenticated">Go To Reports</button>
+                  <button class="btn btn-secondary btn-sm" (click)="authService.logout()" type="button" *ngIf="authService.authenticated">Log Out</button>
+                  <button class="btn btn-secondary btn-sm" [routerLink]="['/app', 'dashboard'] " *ngIf="authService.authenticated">Go To Reports</button>
                 </div>
               </div>
               <div class="row m-t-1">

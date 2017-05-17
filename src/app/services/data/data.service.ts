@@ -14,14 +14,19 @@ export class DataService {
     }
 
 
-    sendOutEmailInvite(email: string, id : string)
+    sendEmailInvite(email: string, personId : string)
     {
+        console.log("Make it to send shit");
+        
+        console.log("Email: "+email);
+        
+        console.log("Person Id: "+personId);
         // What to do with the response???
-        this.http.put("https://mcsc-supporting-api.azurewebsites.net/api/invite",
+        /*this.http.put("https://mcsc-supporting-api.azurewebsites.net/api/invite",
         {
             'email' : email,
             'id' : id
-        });
+        });*/
         
     }
 
@@ -32,14 +37,17 @@ export class DataService {
 
         var token = ""; 
         // Parse out the profile ID
-        var id = "";
+        var id ="";
+
         
         console.log("Token: " + token + " Profile Id: "+ id);
 
         // Check to make sure the token and id match!
         // Make some call to a dataservice....
-        this.http.get("https://mcsc-supporting-api.azurewebsites.net/api/verify?access_token={token}&id={id}")
-        .map(response => JSON.parse(response.json()));
+
+        /*var requestUrl = "https://mcsc-supporting-api.azurewebsites.net/api/verify?access_token="+token+"&"+"id="id;
+        this.http.get(requestUrl)
+        .map(response => JSON.parse(response.json()));*/
 
         /*
         */
