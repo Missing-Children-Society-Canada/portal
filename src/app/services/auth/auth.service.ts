@@ -8,7 +8,7 @@ declare var Msal: any;
 @Injectable()
 export class AuthService {
     client: any;
-    authenticated:boolean = true;
+    authenticated:boolean = false;
     public user : any = {};
 
     constructor(private http: Http) {
@@ -22,6 +22,24 @@ export class AuthService {
             }
         });
     }
+
+checkOneTimeAccessToken(url: string) :boolean
+{
+    // Parse out the token
+    console.log("URL: " + url)
+
+    var token = ""; 
+    // Parse out the profile ID
+    var profileId = "";
+    
+    console.log("Token: " + token + " Profile Id: "+ profileId);
+
+    // Check to make sure the token and id match!
+    // Make some call to a dataservice....
+    
+    return true;
+
+}
 
     login() {
         return this.client.loginPopup()
