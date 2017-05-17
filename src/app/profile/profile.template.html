@@ -2,7 +2,7 @@
   <li class="breadcrumb-item">YOU ARE HERE</li>
   <li class="active breadcrumb-item">Profile</li>
 </ol>
-<h1 class="page-title">User - <span class="fw-semi-bold">Profile</span></h1>
+<h1 class="page-title">{{authService.user.name}}</h1>
 <div class="row profile">
   <div class="col-lg-6 col-12">
     <section class="widget">
@@ -24,8 +24,8 @@
               <span class="thumb-xlg">
                 <img class="rounded-circle" src="assets/img/people/a5.jpg" alt="...">
               </span>
-              <h5 class="fw-normal">Adam <span class="fw-semi-bold">Johns</span></h5>
-              <p>UI/UX designer</p>
+              <h5 class="fw-normal">{{authService.user.name}}</h5>
+              <p>{{authService.user.title}}</p>
               <a href="#" class="btn btn-danger btn-sm mt">
                 &nbsp;Send
                 <i class="fa fa-envelope ml-xs"></i>&nbsp;
