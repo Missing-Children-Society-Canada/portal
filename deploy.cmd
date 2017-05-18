@@ -105,7 +105,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   popd
 )
 
-:: 4. Build the Angular Application
+:: 4. Webpack (build:prod)
 echo Building application > '%DEPLOYMENT_TARGET%\!NPM_CMD! run build:prod'
 pushd "%DEPLOYMENT_TARGET%"
 call :ExecuteCmd !NPM_CMD! run build:prod
