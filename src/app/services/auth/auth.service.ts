@@ -12,7 +12,7 @@ export class AuthService {
     public user : any = {};
 
     constructor(private http: Http) {
-        this.client = new Msal.UserAgentApplication('8c2ebb64-2b44-4215-a86a-c50db07b0ecc', 'https://login.microsoftonline.com/6044a321-e0b8-4797-8651-e2722761fad9'
+        this.client = new Msal.UserAgentApplication('08db5440-cada-4a70-a224-a2b8024d2cab', 'https://login.microsoftonline.com/6044a321-e0b8-4797-8651-e2722761fad9'
         , (errorDesc, token, error, tokenType) => {
             if (token) {
                  console.log("Heck yeah got a token");
