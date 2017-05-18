@@ -7,7 +7,7 @@
   <li class="breadcrumb-item" [hidden] = "true">YOU ARE HERE</li>
   <li class="active breadcrumb-item">Profile</li>
 </ol>
-<h1 class="page-title">{{person.givenName}} <span class="fw-semi-bold">{{person.surName}}</span></h1>
+<h1 class="page-title">{{person.name}}</h1>
 <div class="row profile">
   <div class="col-lg-6 col-12">
     <section class="widget">
@@ -34,14 +34,14 @@
           <div class="col-md-5 col-12 text-center">
             <div class="post-user post-user-profile">
               <span class="thumb-xlg">
-                <img class="rounded-circle" src="{{person.image}}" alt="...">
+                <img class="rounded-circle" src="{{person.photo}}" alt="..." ng-hide="person.photo == null">
               </span>
-              <h5 class="fw-normal">{{person.givenName}} <span class="fw-semi-bold">{{person.surname}}</span></h5>
-              <p>{{person.gender}}</p>
+              <h5 *ngIf="person.name" class="fw-normal">{{person.name}}</h5>
+              <p *ngIf="person.gender">{{person.gender}}</p>
               <ul class="contacts">
-                <li><i class="fa fa-phone fa-fw mr-xs"></i><a href="#"> +{{person.telephoneCountryCode}} {{person.telephoneNumber}}</a></li>
-                <li><i class="fa fa-envelope fa-fw mr-xs"></i><a href="mailto:{{person.emailAddress}}"> {{person.emailAddress}}</a></li>
-                <li><i class="fa fa-map-marker fa-fw mr-xs"></i><a href="#"> {{person.countryFull}}</a></li>
+                <li *ngIf="person.telephoneCountryCode"><i class="fa fa-phone fa-fw mr-xs"></i><a href="#"> +{{person.telephoneCountryCode}} {{person.telephoneNumber}}</a></li>
+                <li *ngIf="person.emailAddress"><i class="fa fa-envelope fa-fw mr-xs"></i><a href="mailto:{{person.emailAddress}}"> {{person.emailAddress}}</a></li>
+                <li *ngIf="person.countryFull"><i class="fa fa-map-marker fa-fw mr-xs"></i><a href="#"> {{person.countryFull}}</a></li>
               </ul>
             </div>
           </div>
@@ -53,83 +53,90 @@
     <section class="activities">
       <h2 class="m-l-1">Details</h2>
       <table>
-        <tr>
+        <tr *ngIf="person.nickname">
           <td>Nickname</td>
           <td>{{person.nickname}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="person.streetAddress">
           <td style="vertical-align: top">Address</td>
           <td style="vertical-align: top">
             {{person.streetAddress}}<br> {{person.city}}, {{person.state}}<br> {{person.zipCode}}
           </td>
         </tr>
-        <tr>
+        <tr *ngIf="person.school">
           <td>School</td>
           <td>{{person.school}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="person.birthday">
           <td>DOB</td>
           <td>{{person.birthday}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="person.gender">
           <td>Gender</td>
           <td>{{person.gender}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="person.centimeters">
           <td>Height</td>
           <td>{{person.centimeters}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="person.eyeColor">
           <td>Eye Color</td>
           <td>{{person.eyeColor}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="person.hairColor">
           <td>Hair Color</td>
           <td>{{person.hairColor}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="person.hairStyle">
           <td>Hair Style</td>
           <td>{{person.hairStyle}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="person.bodyBuild">
           <td>Body Build</td>
           <td>{{person.bodyBuild}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="person.facialHair">
           <td>Facial Hair</td>
           <td>{{person.facialHair}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="person.marks">
           <td>Marks</td>
           <td>{{person.marks}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="person.jewelry">
           <td>Jewelry</td>
           <td>{{person.jewelry}}</td>
         </tr>
-        <tr>
-          <td>Social</td>
+        <tr *ngIf="person.social">
           <td>
             <table>
-              <tr *ngFor="let socialNetwork of person.socialNetworks">
-                <td>{{socialNetwork.platform}}</td>
-                <td>{{socialNetwork.userId}}</td>
+              <thead>
+                <td><strong>Twitter</strong></td>
+                <td><strong>Facebook</strong></td>
+                <td><strong>Instagram</strong></td>
+              </thead>
+              <tbody>
+              <tr>
+                <td>{{person.social.twitter}}</td>
+                <td>{{person.social.facebook}}</td>
+                <td>{{person.social.Instagram}}</td>
               </tr>
+              <tbody>
             </table>
             
           </td>
         </tr>
-        <tr>
+        <tr *ngIf="person.latitude">
           <td>Last Known Location</td>
           <td>
             <a target="_blank" 
               href="https://www.bing.com/maps?q=latitude+{{person.latitude}}%2c+longitude+{{person.longitude}}">
             lat: {{person.latitude | number:0.00}}, 
-            lon: {{person.longitude | number:0.00}}
+            long: {{person.longitude | number:0.00}}
             </a>
             </td>
         </tr>
-        <tr>
+        <tr *ngIf="person.contacts">
           <td style="vertical-align: top">Contact With</td>
           <td style="vertical-align: top">
             <table>

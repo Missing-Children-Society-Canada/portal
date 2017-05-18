@@ -19,10 +19,10 @@ export class DataService {
         console.log("Make it to send shit");
         
         console.log("Email: "+email);
-        
+        /*
         console.log("Person Id: "+personId);
         // What to do with the response???
-        /*this.http.put("https://mcsc-supporting-api.azurewebsites.net/api/invite",
+        this.http.put("https://mcsc-supporting-api.azurewebsites.net/api/invite",
         {
             'email' : email,
             'id' : id
@@ -55,18 +55,29 @@ export class DataService {
     }
 
     getPerson(id: number | string) {
+        // TODO: Change this to use the endpoint
         return this.getPersons().then(pp => pp.find(p => p.id == id));
-    }
+       /* var user;
+        var response = this.http.get("https://mcsc-supporting-api.azurewebsites.net/api/profiles/{id}")
+             .map(response => response.json())
+            .toPromise()
+            .then(x => {
+                console.log(x);
+                 user = x;
+            });
+            return user;*/
+        }
 
     getPersons() {
         let that = this;
         //use these two lines instead of the next two to pull from the api
-        // return this.http.get("https://mcsc-supporting-api.azurewebsites.net/api/profiles")
-        //     .map(response => JSON.parse(response.json()))
-        return this.http.get("/assets/mock-data/persons.json")
-            .map(response => response.json())
+         return this.http.get("https://mcsc-supporting-api.azurewebsites.net/api/profiles")
+             .map(response => response.json())
+        /*return this.http.get("/assets/mock-data/persons.json")
+            .map(response => response.json())*/
             .toPromise()
             .then(fetchedPersons => {
+                console.log(fetchedPersons);
                 that.persons = fetchedPersons;
                 return that.persons;
             });

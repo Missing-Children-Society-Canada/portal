@@ -1,10 +1,17 @@
 export class Person {
-    id: string;
-    firstname: string;
-    lastname: string
-    datetime: string;
-    image: string;
-    twitter: boolean;
-    facebook: boolean;
-    instagram: boolean;
+    id: string;    
+    eventCount: Int16Array;
+	mostRecentPlatform: string;
+	triggeredOn : Date;
+	name: string;
+	photo: string;
+	social: Social;
+	gender: string;
+};
+
+export class Social
+{
+    twitter: string;
+    instagram: string;
+	facebook: string;
 }
