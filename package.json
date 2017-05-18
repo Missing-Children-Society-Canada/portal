@@ -77,7 +77,8 @@
     "typescript": "^2.2.2",
     "webpack-raphael": "2.1.4",
     "widgster": "0.0.3",
-    "zone.js": "0.7.4"
+    "zone.js": "0.7.4",
+    "webpack": "2.2.0-rc.2"
   },
   "napa": {
     "bootstrap-application-wizard": "git://github.com/amoffat/bootstrap-application-wizard.git#3768da3142f43428c5f63284407a2481a9e283d3",
@@ -131,7 +132,6 @@
     "typescript": "2.0.10",
     "url-loader": "0.5.7",
     "v8-lazy-parse-webpack-plugin": "0.3.0",
-    "webpack": "2.2.0-rc.2",
     "webpack-dev-middleware": "1.6.1",
     "webpack-dev-server": "2.2.0-rc.0",
     "webpack-md5-hash": "0.0.5",
