@@ -1,10 +1,10 @@
 <div [hidden]="true">
-      <a [routerLink]=" ['dashboard'] ">
+  <a [routerLink]=" ['dashboard'] ">
         Dashboard
       </a>
 </div>
 <ol class="breadcrumb">
-  <li class="breadcrumb-item" [hidden] = "true">YOU ARE HERE</li>
+  <li class="breadcrumb-item" [hidden]="true">YOU ARE HERE</li>
   <li class="active breadcrumb-item">Profile</li>
 </ol>
 <h1 class="page-title">{{person.name}}</h1>
@@ -14,19 +14,19 @@
       <div class="widget-body">
         <div class="widget-top-overflow text-white">
           <div class="height-250 overflow-hidden">
-            <img class="img-fluid" src="assets/img/pictures/19.jpg">
+            <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/mcsc-media-library/site-images/homepage-bg.jpg">
           </div>
           <div class="btn-toolbar">
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" [(ngModel)]="emailTo" *ngIf="authService.authenticated"/>
-                <a (click)="sendEmail(emailTo, person.id)" class="btn btn-outline btn-sm pull-right" *ngIf="authService.authenticated">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" [(ngModel)]="emailTo" *ngIf="authService.authenticated" />
+              <a (click)="sendEmail(emailTo, person.id)" class="btn btn-outline btn-sm pull-right" *ngIf="authService.authenticated">
                   <i class="fa fa-envelope fa-fw mr-xs"></i>
                   Send Data
                 </a>
-                <div [hidden]="!emailSent">
-                  Email Sent to: {{emailTo}}
-                </div>
+              <div [hidden]="!emailSent">
+                Email Sent to: {{emailTo}}
+              </div>
             </div>
           </div>
         </div>
@@ -107,34 +107,30 @@
           <td>Jewelry</td>
           <td>{{person.jewelry}}</td>
         </tr>
-        <tr *ngIf="person.social">
-          <td>
-            <table>
-              <thead>
-                <td><strong>Twitter</strong></td>
-                <td><strong>Facebook</strong></td>
-                <td><strong>Instagram</strong></td>
-              </thead>
-              <tbody>
-              <tr>
-                <td>{{person.social.twitter}}</td>
-                <td>{{person.social.facebook}}</td>
-                <td>{{person.social.Instagram}}</td>
-              </tr>
-              <tbody>
-            </table>
-            
-          </td>
+        <tr>
+          <table *ngIf = "person.social">
+        <tr *ngIf="person.social.twitter">
+          <td><strong>Twitter</strong></td>
+          <td>{{person.social.twitter}}</td>
+        </tr>
+        <tr *ngIf="person.social.facebook">
+          <td><strong>Facebook</strong></td>
+          <td>{{person.social.facebook}}</td>
+        </tr>
+        <tr *ngIf="person.social.instagram">
+          <td><strong>Instagram</strong></td>
+          <td>{{person.social.instagram}}</td>
+        </tr>
+          </table>
         </tr>
         <tr *ngIf="person.latitude">
           <td>Last Known Location</td>
           <td>
-            <a target="_blank" 
-              href="https://www.bing.com/maps?q=latitude+{{person.latitude}}%2c+longitude+{{person.longitude}}">
+            <a target="_blank" href="https://www.bing.com/maps?q=latitude+{{person.latitude}}%2c+longitude+{{person.longitude}}">
             lat: {{person.latitude | number:0.00}}, 
             long: {{person.longitude | number:0.00}}
             </a>
-            </td>
+          </td>
         </tr>
         <tr *ngIf="person.contacts">
           <td style="vertical-align: top">Contact With</td>
