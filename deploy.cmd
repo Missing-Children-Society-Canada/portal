@@ -106,8 +106,11 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 )
 
 :: 4. Build the Angular Application
+echo Building application > '%DEPLOYMENT_TARGET%\!NPM_CMD! run build:prod'
+pushd "%DEPLOYMENT_TARGET%"
 call :ExecuteCmd !NPM_CMD! run build:prod
 IF !ERRORLEVEL! NEQ 0 goto error
+popd
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 goto end
